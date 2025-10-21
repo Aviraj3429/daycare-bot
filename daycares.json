@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Little Wonders Child Development Centre",
+    "address": "123 Sunshine Ave, Edmonton, AB",
+    "phone": "+1 780-998-5505",
+    "email": "info@littlewonderschildcare.ca",
+    "website": "https://littlewonderschildcare.ca",
+    "hours": "Monday–Friday, 6:00 AM–6:00 PM",
+    "programs": ["Infant", "Toddler", "Preschool", "After-school"],
+    "meals": "Healthy snacks and lunch provided",
+    "fees": {
+      "infant": "$1150/month",
+      "toddler": "$1000/month",
+      "preschool": "$950/month"
+    },
+    "about": "Warm, play-based learning with qualified educators.",
+    "safety": "Secure entry, daily sanitization, licensed staff.",
+    "tour_link": "https://littlewonderschildcare.ca/book-a-tour"
+  }
+]
