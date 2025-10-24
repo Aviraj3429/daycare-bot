@@ -25,6 +25,9 @@ const {
 } = process.env;
 
 const app = express();
+app.get("/", (req, res) => {
+  res.send("🚀 Daycare Bot is live and running!");
+});
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
