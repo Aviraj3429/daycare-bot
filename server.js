@@ -35,8 +35,6 @@ const client = twilio(TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN);
 const openai = new OpenAI({ apiKey: OPENAI_API_KEY });
 
 // ================= GOOGLE SHEETS (Service Account) =================
-import fs from 'fs';
-
 const sa = JSON.parse(fs.readFileSync('/etc/secrets/daycare-bot-service.json', 'utf-8'));
 const jwt = new google.auth.JWT(
   sa.client_email,
