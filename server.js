@@ -37,16 +37,6 @@ const ttsClient = new textToSpeech.TextToSpeechClient({
   keyFilename: '/etc/secrets/daycare-bot-service.json'
 });
 
-<<<<<<< HEAD
-// ================= GOOGLE SHEETS (Service Account) =================
-const sa = JSON.parse(fs.readFileSync('/etc/secrets/daycare-bot-service.json', 'utf-8'));
-const jwt = new google.auth.JWT(
-  sa.client_email,
-  null,
-  sa.private_key.replace(/\\n/g, '\n'), // fix for escaped newlines
-  ['https://www.googleapis.com/auth/spreadsheets']
-);
-=======
 // ================= Daycare Info =================
 const daycare = {
   name: "Little Wonders Child Development Center",
@@ -56,14 +46,17 @@ const daycare = {
   fees: { "Infant": "$1200", "Toddler": "$1100", "Preschool": "$1000" }
 };
 
-// ================== Google Sheets ==================
+// ================= Google Sheets =================
 const sa = JSON.parse(fs.readFileSync('/etc/secrets/daycare-bot-service.json', 'utf-8'));
-const jwt = new google.auth.JWT(sa.client_email, null, sa.private_key.replace(/\\n/g, '\n'),
-  ['https://www.googleapis.com/auth/spreadsheets']);
->>>>>>> da62f31 (Deployable version: voice + WhatsApp + Sheets + email)
+const jwt = new google.auth.JWT(
+  sa.client_email,
+  null,
+  sa.private_key.replace(/\\n/g, '\n'),
+  ['https://www.googleapis.com/auth/spreadsheets']
+);
 const sheets = google.sheets({ version: 'v4', auth: jwt });
 
-// Local JSON backup
+// ================= Local JSON Backup =================
 function backupLog(entry) {
   const logsFile = './call_logs.json';
   const logs = fs.existsSync(logsFile) ? JSON.parse(fs.readFileSync(logsFile)) : [];
